@@ -488,7 +488,7 @@
       {
         "Age": 49,
         "Gender": "M",
-        "Chol": 5.20,
+        "Chol": 5.2,
         "HDL": 1.71,
         "LDL": 3,
         "Other": 3.51
@@ -1160,7 +1160,8 @@
           "field": "Chol",
           "type": "quantitative",
           "aggregate": "average",
-          "scale": {"domain": [3.5, 6]}
+          "scale": {"domain": [3.5, 6]},
+          "axis": {"title": "Average of Chol (mmol/L)"}
         },
         "xOffset": {"field": "Gender"},
         "color": {"field": "Gender", "legend": {"values": ["F", "M"]}},
@@ -1220,7 +1221,8 @@
               "field": "Chol",
               "type": "quantitative",
               "aggregate": "average",
-              "scale": {"domain": [3.5, 6]}
+              "scale": {"domain": [3.5, 6]},
+              "axis": {"title": "Average of Chol (mmol/L)"}
             },
             "color": {
               "field": "Gender",
