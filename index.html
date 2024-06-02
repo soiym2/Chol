@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.29.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.18.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.25.0"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {
+        "Age": 20,
+        "Gender": "F",
+        "Chol": 4.1,
+        "HDL": 1,
+        "LDL": 2.3,
+        "Other": 4.1
+      },
+      {
+        "Age": 20,
+        "Gender": "M",
+        "Chol": 4.3,
+        "HDL": 1.27,
+        "LDL": 1.84,
+        "Other": 4.489999999999999
+      },
+      {
+        "Age": 21,
+        "Gender": "F",
+        "Chol": 4.5,
+        "HDL": 1.27,
+        "LDL": 1.84,
+        "Other": 4.69
+      },
+      {
+        "Age": 21,
+        "Gender": "M",
+        "Chol": 4.3,
+        "HDL": 1.27,
+        "LDL": 1.84,
+        "Other": 4.489999999999999
+      },
+      {
+        "Age": 22,
+        "Gender": "F",
+        "Chol": 4.61,
+        "HDL": 1.32,
+        "LDL": 3.19,
+        "Other": 3.4
+      },
+      {
+        "Age": 22,
+        "Gender": "M",
+        "Chol": 4.28,
+        "HDL": 1.27,
+        "LDL": 3.37,
+        "Other": 2.94
+      },
+      {
+        "Age": 23,
+        "Gender": "F",
+        "Chol": 4.74,
+        "HDL": 1.26,
+        "LDL": 1.84,
+        "Other": 4.94
+      },
+      {
+        "Age": 23,
+        "Gender": "M",
+        "Chol": 4.08,
+        "HDL": 1.27,
+        "LDL": 3.01,
+        "Other": 3.1
+      },
+      {
+        "Age": 24,
+        "Gender": "F",
+        "Chol": 4.33,
+        "HDL": 1.49,
+        "LDL": 2.51,
+        "Other": 3.63
+      },
+      {
+        "Age": 24,
+        "Gender": "M",
+        "Chol": 4.21,
+        "HDL": 1.16,
+        "LDL": 2,
+        "Other": 4.35
+      },
+      {
+        "Age": 25,
+        "Gender": "F",
+        "Chol": 4.6,
+        "HDL": 1.65,
+        "LDL": 2.32,
+        "Other": 3.9299999999999997
+      },
+      {
+        "Age": 25,
+        "Gender": "M",
+        "Chol": 4.15,
+        "HDL": 1.28,
+        "LDL": 2.47,
+        "Other": 3.6999999999999997
+      },
+      {
+        "Age": 26,
+        "Gender": "F",
+        "Chol": 4.15,
+        "HDL": 1.69,
+        "LDL": 2.32,
+        "Other": 3.4400000000000004
+      },
+      {
+        "Age": 26,
+        "Gender": "M",
+        "Chol": 4.19,
+        "HDL": 1.32,
+        "LDL": 2.4,
+        "Other": 3.77
+      },
+      {
+        "Age": 27,
+        "Gender": "F",
+        "Chol": 4.57,
+        "HDL": 1.59,
+        "LDL": 2.49,
+        "Other": 3.79
+      },
+      {
+        "Age": 27,
+        "Gender": "M",
+        "Chol": 4.31,
+        "HDL": 1.34,
+        "LDL": 2.49,
+        "Other": 3.7799999999999994
+      },
+      {
+        "Age": 28,
+        "Gender": "F",
+        "Chol": 4.5,
+        "HDL": 1.66,
+        "LDL": 2.58,
+        "Other": 3.5599999999999996
+      },
+      {
+        "Age": 28,
+        "Gender": "M",
+        "Chol": 4.37,
+        "HDL": 1.41,
+        "LDL": 2.6,
+        "Other": 3.6599999999999997
+      },
+      {
+        "Age": 29,
+        "Gender": "F",
+        "Chol": 4.48,
+        "HDL": 1.75,
+        "LDL": 2.66,
+        "Other": 3.37
+      },
+      {
+        "Age": 29,
+        "Gender": "M",
+        "Chol": 4.61,
+        "HDL": 1.29,
+        "LDL": 2.69,
+        "Other": 3.93
+      },
+      {
+        "Age": 30,
+        "Gender": "F",
+        "Chol": 4.65,
+        "HDL": 1.63,
+        "LDL": 2.77,
+        "Other": 3.5500000000000003
+      },
+      {
+        "Age": 30,
+        "Gender": "M",
+        "Chol": 4.6,
+        "HDL": 1.31,
+        "LDL": 2.73,
+        "Other": 3.8599999999999994
+      },
+      {
+        "Age": 31,
+        "Gender": "F",
+        "Chol": 4.63,
+        "HDL": 1.65,
+        "LDL": 2.71,
+        "Other": 3.57
+      },
+      {
+        "Age": 31,
+        "Gender": "M",
+        "Chol": 4.56,
+        "HDL": 1.36,
+        "LDL": 2.55,
+        "Other": 3.9499999999999993
+      },
+      {
+        "Age": 32,
+        "Gender": "F",
+        "Chol": 4.46,
+        "HDL": 1.62,
+        "LDL": 2.55,
+        "Other": 3.59
+      },
+      {
+        "Age": 32,
+        "Gender": "M",
+        "Chol": 4.62,
+        "HDL": 1.36,
+        "LDL": 2.72,
+        "Other": 3.8399999999999994
+      },
+      {
+        "Age": 33,
+        "Gender": "F",
+        "Chol": 4.67,
+        "HDL": 1.45,
+        "LDL": 2.64,
+        "Other": 3.8799999999999994
+      },
+      {
+        "Age": 33,
+        "Gender": "M",
+        "Chol": 4.6,
+        "HDL": 1.22,
+        "LDL": 2.63,
+        "Other": 4.05
+      },
+      {
+        "Age": 34,
+        "Gender": "F",
+        "Chol": 4.41,
+        "HDL": 1.53,
+        "LDL": 2.52,
+        "Other": 3.6599999999999997
+      },
+      {
+        "Age": 34,
+        "Gender": "M",
+        "Chol": 4.69,
+        "HDL": 1.37,
+        "LDL": 2.84,
+        "Other": 3.78
+      },
+      {
+        "Age": 35,
+        "Gender": "F",
+        "Chol": 4.59,
+        "HDL": 1.47,
+        "LDL": 2.62,
+        "Other": 3.8
+      },
+      {
+        "Age": 35,
+        "Gender": "M",
+        "Chol": 4.72,
+        "HDL": 1.29,
+        "LDL": 2.74,
+        "Other": 3.9899999999999993
+      },
+      {
+        "Age": 36,
+        "Gender": "F",
+        "Chol": 4.62,
+        "HDL": 1.5,
+        "LDL": 2.8,
+        "Other": 3.62
+      },
+      {
+        "Age": 36,
+        "Gender": "M",
+        "Chol": 4.65,
+        "HDL": 1.48,
+        "LDL": 2.71,
+        "Other": 3.76
+      },
+      {
+        "Age": 37,
+        "Gender": "F",
+        "Chol": 4.5,
+        "HDL": 1.63,
+        "LDL": 2.6,
+        "Other": 3.57
+      },
+      {
+        "Age": 37,
+        "Gender": "M",
+        "Chol": 4.67,
+        "HDL": 1.26,
+        "LDL": 2.65,
+        "Other": 4.0600000000000005
+      },
+      {
+        "Age": 38,
+        "Gender": "F",
+        "Chol": 4.55,
+        "HDL": 1.52,
+        "LDL": 2.65,
+        "Other": 3.6799999999999997
+      },
+      {
+        "Age": 38,
+        "Gender": "M",
+        "Chol": 4.98,
+        "HDL": 1.32,
+        "LDL": 2.96,
+        "Other": 4
+      },
+      {
+        "Age": 39,
+        "Gender": "F",
+        "Chol": 4.57,
+        "HDL": 1.77,
+        "LDL": 2.8,
+        "Other": 3.3000000000000003
+      },
+      {
+        "Age": 39,
+        "Gender": "M",
+        "Chol": 4.96,
+        "HDL": 1.4,
+        "LDL": 3.04,
+        "Other": 3.82
+      },
+      {
+        "Age": 40,
+        "Gender": "F",
+        "Chol": 4.59,
+        "HDL": 1.66,
+        "LDL": 2.75,
+        "Other": 3.4799999999999995
+      },
+      {
+        "Age": 40,
+        "Gender": "M",
+        "Chol": 4.85,
+        "HDL": 1.32,
+        "LDL": 2.81,
+        "Other": 4.02
+      },
+      {
+        "Age": 41,
+        "Gender": "F",
+        "Chol": 4.52,
+        "HDL": 1.59,
+        "LDL": 2.58,
+        "Other": 3.6499999999999995
+      },
+      {
+        "Age": 41,
+        "Gender": "M",
+        "Chol": 4.85,
+        "HDL": 1.41,
+        "LDL": 2.91,
+        "Other": 3.829999999999999
+      },
+      {
+        "Age": 42,
+        "Gender": "F",
+        "Chol": 4.75,
+        "HDL": 1.75,
+        "LDL": 2.76,
+        "Other": 3.54
+      },
+      {
+        "Age": 42,
+        "Gender": "M",
+        "Chol": 4.79,
+        "HDL": 1.5,
+        "LDL": 2.75,
+        "Other": 3.84
+      },
+      {
+        "Age": 43,
+        "Gender": "F",
+        "Chol": 4.43,
+        "HDL": 1.53,
+        "LDL": 2.56,
+        "Other": 3.6399999999999992
+      },
+      {
+        "Age": 43,
+        "Gender": "M",
+        "Chol": 4.71,
+        "HDL": 1.34,
+        "LDL": 2.77,
+        "Other": 3.9
+      },
+      {
+        "Age": 44,
+        "Gender": "F",
+        "Chol": 5.03,
+        "HDL": 1.49,
+        "LDL": 2.91,
+        "Other": 3.9299999999999997
+      },
+      {
+        "Age": 44,
+        "Gender": "M",
+        "Chol": 4.9,
+        "HDL": 1.5,
+        "LDL": 2.82,
+        "Other": 3.8800000000000003
+      },
+      {
+        "Age": 45,
+        "Gender": "F",
+        "Chol": 4.45,
+        "HDL": 1.54,
+        "LDL": 2.66,
+        "Other": 3.55
+      },
+      {
+        "Age": 45,
+        "Gender": "M",
+        "Chol": 4.98,
+        "HDL": 1.38,
+        "LDL": 2.99,
+        "Other": 3.91
+      },
+      {
+        "Age": 46,
+        "Gender": "F",
+        "Chol": 4.79,
+        "HDL": 1.42,
+        "LDL": 2.78,
+        "Other": 3.89
+      },
+      {
+        "Age": 46,
+        "Gender": "M",
+        "Chol": 4.96,
+        "HDL": 1.32,
+        "LDL": 2.94,
+        "Other": 3.9999999999999996
+      },
+      {
+        "Age": 47,
+        "Gender": "F",
+        "Chol": 4.82,
+        "HDL": 1.7,
+        "LDL": 3.02,
+        "Other": 3.4
+      },
+      {
+        "Age": 47,
+        "Gender": "M",
+        "Chol": 5.01,
+        "HDL": 1.35,
+        "LDL": 3.01,
+        "Other": 3.9499999999999997
+      },
+      {
+        "Age": 48,
+        "Gender": "F",
+        "Chol": 4.62,
+        "HDL": 1.59,
+        "LDL": 2.72,
+        "Other": 3.61
+      },
+      {
+        "Age": 48,
+        "Gender": "M",
+        "Chol": 5.11,
+        "HDL": 1.6,
+        "LDL": 3.12,
+        "Other": 3.69
+      },
+      {
+        "Age": 49,
+        "Gender": "F",
+        "Chol": 4.84,
+        "HDL": 1.57,
+        "LDL": 3.03,
+        "Other": 3.5399999999999996
+      },
+      {
+        "Age": 49,
+        "Gender": "M",
+        "Chol": 4.92,
+        "HDL": 1.71,
+        "LDL": 3,
+        "Other": 3.51
+      },
+      {
+        "Age": 50,
+        "Gender": "F",
+        "Chol": 4.92,
+        "HDL": 1.61,
+        "LDL": 3,
+        "Other": 3.6099999999999994
+      },
+      {
+        "Age": 50,
+        "Gender": "M",
+        "Chol": 4.83,
+        "HDL": 1.69,
+        "LDL": 3.06,
+        "Other": 3.38
+      },
+      {
+        "Age": 51,
+        "Gender": "F",
+        "Chol": 4.85,
+        "HDL": 1.37,
+        "LDL": 2.7,
+        "Other": 4.079999999999999
+      },
+      {
+        "Age": 51,
+        "Gender": "M",
+        "Chol": 5.06,
+        "HDL": 1.73,
+        "LDL": 3,
+        "Other": 3.6299999999999994
+      },
+      {
+        "Age": 52,
+        "Gender": "F",
+        "Chol": 5.01,
+        "HDL": 1.46,
+        "LDL": 2.58,
+        "Other": 4.27
+      },
+      {
+        "Age": 52,
+        "Gender": "M",
+        "Chol": 4.93,
+        "HDL": 1.74,
+        "LDL": 3,
+        "Other": 3.4899999999999993
+      },
+      {
+        "Age": 53,
+        "Gender": "F",
+        "Chol": 5.26,
+        "HDL": 1.64,
+        "LDL": 3.07,
+        "Other": 3.85
+      },
+      {
+        "Age": 53,
+        "Gender": "M",
+        "Chol": 5.21,
+        "HDL": 1.49,
+        "LDL": 3.04,
+        "Other": 3.9799999999999995
+      },
+      {
+        "Age": 54,
+        "Gender": "F",
+        "Chol": 5.24,
+        "HDL": 1.66,
+        "LDL": 2.92,
+        "Other": 3.96
+      },
+      {
+        "Age": 54,
+        "Gender": "M",
+        "Chol": 4.75,
+        "HDL": 1.55,
+        "LDL": 2.81,
+        "Other": 3.69
+      },
+      {
+        "Age": 55,
+        "Gender": "F",
+        "Chol": 4.96,
+        "HDL": 1.54,
+        "LDL": 2.73,
+        "Other": 3.99
+      },
+      {
+        "Age": 55,
+        "Gender": "M",
+        "Chol": 4.95,
+        "HDL": 1.37,
+        "LDL": 2.9,
+        "Other": 3.98
+      },
+      {
+        "Age": 56,
+        "Gender": "F",
+        "Chol": 5.43,
+        "HDL": 1.62,
+        "LDL": 2.89,
+        "Other": 4.219999999999999
+      },
+      {
+        "Age": 56,
+        "Gender": "M",
+        "Chol": 4.91,
+        "HDL": 1.63,
+        "LDL": 3.03,
+        "Other": 3.5500000000000003
+      },
+      {
+        "Age": 57,
+        "Gender": "F",
+        "Chol": 5.06,
+        "HDL": 1.74,
+        "LDL": 3.09,
+        "Other": 3.5299999999999994
+      },
+      {
+        "Age": 57,
+        "Gender": "M",
+        "Chol": 4.88,
+        "HDL": 1.77,
+        "LDL": 3.11,
+        "Other": 3.3
+      },
+      {
+        "Age": 58,
+        "Gender": "F",
+        "Chol": 5.47,
+        "HDL": 1.73,
+        "LDL": 3.28,
+        "Other": 3.76
+      },
+      {
+        "Age": 58,
+        "Gender": "M",
+        "Chol": 4.98,
+        "HDL": 1.91,
+        "LDL": 3.11,
+        "Other": 3.26
+      },
+      {
+        "Age": 59,
+        "Gender": "F",
+        "Chol": 5.27,
+        "HDL": 1.66,
+        "LDL": 2.86,
+        "Other": 4.049999999999999
+      },
+      {
+        "Age": 59,
+        "Gender": "M",
+        "Chol": 4.82,
+        "HDL": 1.54,
+        "LDL": 3.04,
+        "Other": 3.54
+      },
+      {
+        "Age": 60,
+        "Gender": "F",
+        "Chol": 5.12,
+        "HDL": 1.47,
+        "LDL": 2.76,
+        "Other": 4.19
+      },
+      {
+        "Age": 60,
+        "Gender": "M",
+        "Chol": 4.86,
+        "HDL": 1.6,
+        "LDL": 3.06,
+        "Other": 3.5
+      },
+      {
+        "Age": 61,
+        "Gender": "F",
+        "Chol": 5.35,
+        "HDL": 1.62,
+        "LDL": 2.94,
+        "Other": 4.09
+      },
+      {
+        "Age": 61,
+        "Gender": "M",
+        "Chol": 4.98,
+        "HDL": 1.82,
+        "LDL": 3.1,
+        "Other": 3.36
+      },
+      {
+        "Age": 62,
+        "Gender": "F",
+        "Chol": 5.53,
+        "HDL": 1.85,
+        "LDL": 3.43,
+        "Other": 3.55
+      },
+      {
+        "Age": 62,
+        "Gender": "M",
+        "Chol": 4.83,
+        "HDL": 1.88,
+        "LDL": 3.16,
+        "Other": 3.09
+      },
+      {
+        "Age": 63,
+        "Gender": "F",
+        "Chol": 5.58,
+        "HDL": 1.72,
+        "LDL": 3.18,
+        "Other": 3.98
+      },
+      {
+        "Age": 63,
+        "Gender": "M",
+        "Chol": 5.07,
+        "HDL": 1.75,
+        "LDL": 3.38,
+        "Other": 3.24
+      },
+      {
+        "Age": 64,
+        "Gender": "F",
+        "Chol": 5.49,
+        "HDL": 2.15,
+        "LDL": 3.6,
+        "Other": 3.04
+      },
+      {
+        "Age": 64,
+        "Gender": "M",
+        "Chol": 4.99,
+        "HDL": 1.5,
+        "LDL": 3.12,
+        "Other": 3.67
+      },
+      {
+        "Age": 65,
+        "Gender": "F",
+        "Chol": 5.49,
+        "HDL": 2.17,
+        "LDL": 3.38,
+        "Other": 3.24
+      },
+      {
+        "Age": 65,
+        "Gender": "M",
+        "Chol": 4.96,
+        "HDL": 1.84,
+        "LDL": 3,
+        "Other": 3.42
+      },
+      {
+        "Age": 66,
+        "Gender": "F",
+        "Chol": 5.07,
+        "HDL": 1.96,
+        "LDL": 3.11,
+        "Other": 3.3000000000000003
+      },
+      {
+        "Age": 66,
+        "Gender": "M",
+        "Chol": 4.82,
+        "HDL": 1.72,
+        "LDL": 3.17,
+        "Other": 3.2300000000000004
+      },
+      {
+        "Age": 67,
+        "Gender": "F",
+        "Chol": 5.44,
+        "HDL": 1.57,
+        "LDL": 3.38,
+        "Other": 3.79
+      },
+      {
+        "Age": 67,
+        "Gender": "M",
+        "Chol": 4.74,
+        "HDL": 1.89,
+        "LDL": 3.12,
+        "Other": 3.03
+      },
+      {
+        "Age": 68,
+        "Gender": "F",
+        "Chol": 5.85,
+        "HDL": 1.87,
+        "LDL": 3.34,
+        "Other": 3.9399999999999995
+      },
+      {
+        "Age": 68,
+        "Gender": "M",
+        "Chol": 5.13,
+        "HDL": 1.61,
+        "LDL": 3.05,
+        "Other": 3.7699999999999996
+      },
+      {
+        "Age": 69,
+        "Gender": "F",
+        "Chol": 5.59,
+        "HDL": 2.31,
+        "LDL": 3.48,
+        "Other": 3.0999999999999996
+      },
+      {
+        "Age": 69,
+        "Gender": "M",
+        "Chol": 4.88,
+        "HDL": 2.42,
+        "LDL": 3.35,
+        "Other": 2.4099999999999997
+      },
+      {
+        "Age": 70,
+        "Gender": "F",
+        "Chol": 5.56,
+        "HDL": 1.91,
+        "LDL": 3.38,
+        "Other": 3.5699999999999994
+      },
+      {
+        "Age": 70,
+        "Gender": "M",
+        "Chol": 4.82,
+        "HDL": 1.71,
+        "LDL": 3.03,
+        "Other": 3.3800000000000003
+      },
+      {
+        "Age": 71,
+        "Gender": "F",
+        "Chol": 5.27,
+        "HDL": 2.31,
+        "LDL": 3.54,
+        "Other": 2.7199999999999993
+      },
+      {
+        "Age": 71,
+        "Gender": "M",
+        "Chol": 4.9,
+        "HDL": 2.22,
+        "LDL": 3.29,
+        "Other": 2.69
+      },
+      {
+        "Age": 72,
+        "Gender": "F",
+        "Chol": 5.34,
+        "HDL": 2.51,
+        "LDL": 3.59,
+        "Other": 2.54
+      },
+      {
+        "Age": 72,
+        "Gender": "M",
+        "Chol": 5.05,
+        "HDL": 1.75,
+        "LDL": 3.15,
+        "Other": 3.4499999999999997
+      },
+      {
+        "Age": 73,
+        "Gender": "F",
+        "Chol": 5.19,
+        "HDL": 2.28,
+        "LDL": 3.36,
+        "Other": 2.8500000000000005
+      },
+      {
+        "Age": 73,
+        "Gender": "M",
+        "Chol": 4.74,
+        "HDL": 1.65,
+        "LDL": 3.08,
+        "Other": 3.31
+      },
+      {
+        "Age": 74,
+        "Gender": "F",
+        "Chol": 5.52,
+        "HDL": 1.76,
+        "LDL": 2.91,
+        "Other": 4.1499999999999995
+      },
+      {
+        "Age": 74,
+        "Gender": "M",
+        "Chol": 4.55,
+        "HDL": 1.85,
+        "LDL": 2.94,
+        "Other": 3.0599999999999996
+      },
+      {
+        "Age": 75,
+        "Gender": "F",
+        "Chol": 5.7,
+        "HDL": 2.74,
+        "LDL": 4.06,
+        "Other": 2.2
+      },
+      {
+        "Age": 75,
+        "Gender": "M",
+        "Chol": 5.08,
+        "HDL": 2.13,
+        "LDL": 3.4,
+        "Other": 2.85
+      },
+      {
+        "Age": 76,
+        "Gender": "F",
+        "Chol": 5.61,
+        "HDL": 2.8,
+        "LDL": 3.85,
+        "Other": 2.2600000000000002
+      },
+      {
+        "Age": 76,
+        "Gender": "M",
+        "Chol": 4.53,
+        "HDL": 1.96,
+        "LDL": 2.77,
+        "Other": 3.1
+      },
+      {
+        "Age": 77,
+        "Gender": "F",
+        "Chol": 5.18,
+        "HDL": 2.43,
+        "LDL": 3.77,
+        "Other": 2.2799999999999994
+      },
+      {
+        "Age": 77,
+        "Gender": "M",
+        "Chol": 4.23,
+        "HDL": 2.32,
+        "LDL": 3.2,
+        "Other": 2.0100000000000002
+      },
+      {
+        "Age": 78,
+        "Gender": "F",
+        "Chol": 5.36,
+        "HDL": 2.69,
+        "LDL": 3.7,
+        "Other": 2.27
+      },
+      {
+        "Age": 78,
+        "Gender": "M",
+        "Chol": 4.95,
+        "HDL": 1.89,
+        "LDL": 3.26,
+        "Other": 3.1000000000000005
+      },
+      {
+        "Age": 79,
+        "Gender": "F",
+        "Chol": 4.93,
+        "HDL": 1.49,
+        "LDL": 3.39,
+        "Other": 4.35
+      },
+      {
+        "Age": 79,
+        "Gender": "M",
+        "Chol": 4.69,
+        "HDL": 1.8,
+        "LDL": 3.17,
+        "Other": 3.5200000000000005
+      },
+      {
+        "Age": 80,
+        "Gender": "F",
+        "Chol": 5.53,
+        "HDL": 1.54,
+        "LDL": 3.38,
+        "Other": 3.91
+      },
+      {
+        "Age": 80,
+        "Gender": "M",
+        "Chol": 4.66,
+        "HDL": 2.97,
+        "LDL": 3.82,
+        "Other": 1.17
+      },
+      {
+        "Age": 81,
+        "Gender": "F",
+        "Chol": 5.41,
+        "HDL": 2.05,
+        "LDL": 3.37,
+        "Other": 3.29
+      },
+      {
+        "Age": 81,
+        "Gender": "M",
+        "Chol": 4.73,
+        "HDL": 2.35,
+        "LDL": 3.22,
+        "Other": 2.46
+      },
+      {
+        "Age": 82,
+        "Gender": "F",
+        "Chol": 4.83,
+        "HDL": 1.48,
+        "LDL": 3.28,
+        "Other": 4.17
+      },
+      {
+        "Age": 82,
+        "Gender": "M",
+        "Chol": 4.59,
+        "HDL": 1.71,
+        "LDL": 2.98,
+        "Other": 3.4999999999999996
+      },
+      {
+        "Age": 83,
+        "Gender": "F",
+        "Chol": 5.12,
+        "HDL": 2.08,
+        "LDL": 3.56,
+        "Other": 2.8799999999999994
+      },
+      {
+        "Age": 83,
+        "Gender": "M",
+        "Chol": 5.24,
+        "HDL": 1.21,
+        "LDL": 4.03,
+        "Other": 4.5
+      },
+      {
+        "Age": 84,
+        "Gender": "F",
+        "Chol": 5.36,
+        "HDL": 1.37,
+        "LDL": 3.13,
+        "Other": 4.26
+      },
+      {
+        "Age": 84,
+        "Gender": "M",
+        "Chol": 4.71,
+        "HDL": 1.72,
+        "LDL": 2.81,
+        "Other": 3.48
+      },
+      {
+        "Age": 85,
+        "Gender": "F",
+        "Chol": 5.09,
+        "HDL": 1.48,
+        "LDL": 2.99,
+        "Other": 4.219999999999999
+      },
+      {
+        "Age": 85,
+        "Gender": "M",
+        "Chol": 4.42,
+        "HDL": 2.98,
+        "LDL": 3.54,
+        "Other": 1.1999999999999997
+      },
+      {
+        "Age": 86,
+        "Gender": "F",
+        "Chol": 5.06,
+        "HDL": 1.94,
+        "LDL": 3.94,
+        "Other": 2.88
+      },
+      {
+        "Age": 86,
+        "Gender": "M",
+        "Chol": 5.05,
+        "HDL": 1.36,
+        "LDL": 2.88,
+        "Other": 4.109999999999999
+      },
+      {
+        "Age": 87,
+        "Gender": "F",
+        "Chol": 5.11,
+        "HDL": 1.61,
+        "LDL": 2.79,
+        "Other": 4.01
+      },
+      {
+        "Age": 87,
+        "Gender": "M",
+        "Chol": 4.73,
+        "HDL": 1.16,
+        "LDL": 3.01,
+        "Other": 4.46
+      },
+      {
+        "Age": 88,
+        "Gender": "F",
+        "Chol": 5.48,
+        "HDL": 1.77,
+        "LDL": 3.23,
+        "Other": 3.78
+      },
+      {
+        "Age": 88,
+        "Gender": "M",
+        "Chol": 4.71,
+        "HDL": 3.29,
+        "LDL": 4.17,
+        "Other": 1.6399999999999997
+      },
+      {
+        "Age": 89,
+        "Gender": "F",
+        "Chol": 5.61,
+        "HDL": 2.84,
+        "LDL": 4.23,
+        "Other": 2.039999999999999
+      },
+      {
+        "Age": 89,
+        "Gender": "M",
+        "Chol": 4.51,
+        "HDL": 2.94,
+        "LDL": 4.13,
+        "Other": 1.94
+      }
+    ]
+  },
+  "vconcat": [
+    {
+      "title": {
+        "text": "성별, 연령대 별 평균 콜레스테롤 수치",
+        "subtitle": "(막대를 선택하면 세부정보를 볼 수 있습니다)",
+        "subtitleColor": "gray",
+        "subtitleFontSize": 10
+      },
+      "mark": {
+        "type": "bar",
+        "stroke": "black",
+        "cursor": "pointer",
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Age",
+          "type": "ordinal",
+          "bin": {"maxbins": 10},
+          "axis": {"title": "age", "labelAngle": 0}
+        },
+        "y": {
+          "field": "Chol",
+          "type": "quantitative",
+          "aggregate": "average",
+          "scale": {"domain": [3.5, 6]}
+        },
+        "xOffset": {"field": "Gender"},
+        "color": {"field": "Gender", "legend": {"values": ["F", "M"]}},
+        "strokeWidth": {
+          "condition": [
+            {"param": "highlight1", "empty": false, "value": 3},
+            {"param": "select1", "empty": false, "value": 2}
+          ],
+          "value": 0
+        },
+        "fillOpacity": {
+          "condition": {"param": "highlight1", "value": 1},
+          "value": 0.3
+        }
+      },
+      "selection": {
+        "sel": {
+          "type": "single",
+          "encodings": ["x", "xOffset"],
+          "empty": "none",
+          "on": "click"
+        },
+        "highlight1": {"type": "point"},
+        "select1": {"type": "point", "on": "pointerover"}
+      },
+      "width": 470,
+      "height": 200
+    },
+    {
+      "spacing": 20,
+      "hconcat": [
+        {
+          "title": {
+            "text": "나이 별 평균 콜레스테롤 수치",
+            "subtitle": "(점을 선택하면 구성 비율을 볼 수 있습니다)",
+            "subtitleColor": "gray",
+            "subtitleFontSize": 10
+          },
+          "transform": [{"filter": {"selection": "sel"}}],
+          "mark": {
+            "type": "line",
+            "point": {
+              "size": 100,
+              "stroke": "black",
+              "strokeWidth": 2,
+              "cursor": "pointer",
+              "tooltip": true
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "Age",
+              "type": "ordinal",
+              "axis": {"title": "age", "labelAngle": 0}
+            },
+            "y": {
+              "field": "Chol",
+              "type": "quantitative",
+              "aggregate": "average",
+              "scale": {"domain": [3.5, 6]}
+            },
+            "color": {
+              "field": "Gender",
+              "type": "nominal",
+              "scale": {"domain": ["M", "F"], "range": ["#1f77b4", "#ff7f0e"]}
+            }
+          },
+          "selection": {
+            "sel2": {
+              "type": "single",
+              "encodings": ["x", "color"],
+              "empty": "none",
+              "on": "click"
+            }
+          },
+          "width": 250,
+          "height": 200
+        },
+        {
+          "title": {
+            "text": "해당 나이의 콜레스테롤 구성",
+            "subtitle": "*좋은 콜레스테롤(HDL)의 정상 비율: 약 25%*",
+            "subtitleColor": "#d62728",
+            "subtitleFontSize": 10
+          },
+          "transform": [
+            {"filter": {"selection": "sel2"}},
+            {"fold": ["HDL", "LDL", "Other"], "as": ["Type", "Percentage"]}
+          ],
+          "encoding": {
+            "theta": {
+              "field": "Percentage",
+              "type": "quantitative",
+              "stack": "normalize"
+            },
+            "color": {
+              "field": "Type",
+              "type": "nominal",
+              "legend": null,
+              "condition": [
+                {"test": "datum.Type === 'HDL'", "value": "#d62728"},
+                {"test": "datum.Type === 'LDL'", "value": "#2ca02c"},
+                {"test": "datum.Type === 'Other'", "value": "#bcbd22"}
+              ],
+              "scale": {"domain": ["HDL", "LDL", "Other"]}
+            }
+          },
+          "width": 200,
+          "height": 215,
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "outerRadius": 80,
+                "innerRadius": 50,
+                "tooltip": true
+              }
+            },
+            {
+              "mark": {"type": "text", "radius": 30},
+              "encoding": {"text": {"field": "Type", "type": "nominal"}}
+            },
+            {
+              "mark": {
+                "type": "arc",
+                "outerRadius": 90,
+                "innerRadius": 50,
+                "tooltip": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
